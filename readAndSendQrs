@@ -25,7 +25,6 @@ function readAndSendQrs() {
   var values = sheet.getRange(1,1,60).getValues();
   var resp = [];
   for (var row in values) {
-    debugger
     var url = "https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=" + values[row];
     resp[row] = UrlFetchApp.fetch(url).getBlob();
   }
